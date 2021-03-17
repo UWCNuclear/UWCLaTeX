@@ -1,0 +1,254 @@
+%% ----------------------------------------------------------------
+%% Thesis.tex -- MAIN FILE (the one that you compile with LaTeX)
+%% ---------------------------------------------------------------- 
+
+% Set up the document
+\documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+\graphicspath{{Figures/}}  % Location of the graphics files (set up for graphics to be in PDF format)
+
+% Include any extra LaTeX packages required
+\usepackage{titlesec}
+\titleformat{\paragraph}[hang]{\bfseries}{\theparagraph}{1em}{}
+
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{mathtools}
+\usepackage{lscape}
+\usepackage{subfigure}
+\usepackage{textcomp}
+\usepackage{color, colortbl}
+\usepackage[export]{adjustbox}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fancyvrb}
+\usepackage{siunitx}
+\usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
+\usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
+\usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
+
+\hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
+\graphicspath{{Figures/}{samples/}}
+%% ----------------------------------------------------------------
+\begin{document}
+\frontmatter	  % Begin Roman style (i, ii, iii, iv...) page numbering
+
+% Set up the Title Page
+\title  {Title}
+\authors  {
+            {Author}
+            }
+            \supervisor{Prof. }
+\addresses  {\groupname\\\deptname\\\university}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
+\date       {\today}
+\subject    {}
+
+\maketitle
+%% ----------------------------------------------------------------
+
+\setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
+
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{}  % Clears all page headers and footers
+\rhead{\thepage}  % Sets the right side header to show the page number
+\lhead{}  % Clears the left side page header
+
+%%                                                          \pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+%% ----------------------------------------------------------------
+% Declaration Page required for the Thesis, your institution may give you a different text to place here
+\Declaration {
+
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+\vfill
+I, Author, declare that this thesis ``Title'' is my
+own work, that it has not been submitted before for any degree or
+assessment at any other university, and that all the sources I have
+used or quoted have been indicated and acknowledged by means of
+complete references.
+\\*[+24pt]
+   %\end{minipage}
+   %\end{center}
+   \hspace*{+2cm}\vspace{\dimexpr-30pt}\includegraphics[scale=0.4]{signature.pdf}
+   \begin{center}
+     Signature:\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots
+     \hfill
+     \hspace*{-1cm} Date:  \\
+   \end{center}
+}
+
+\clearpage  % Declaration ended, now start a new page
+
+%% ----------------------------------------------------------------
+% The "Funny Quote Page"
+\pagestyle{empty}  % No headers or footers for the following pages
+
+\null\vfill
+% Now comes the "Funny Quote", written in italics
+\textit{``Quote"}
+
+\begin{flushright}
+Author
+\end{flushright}
+
+\vfill\vfill\vfill\vfill\vfill\vfill\null
+\clearpage  % Funny Quote page ended, start a new page
+%% ----------------------------------------------------------------
+
+% The Abstract Page
+\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
+\abstract{
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+\vfill\vfill
+Abstract. 
+
+
+\vfill\vfill
+
+\Keywords   {
+
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+\vfill\vfill
+Coulomb Excitation, Reorientation Effect, Shape Coexistence, Neutron-Deficient Nuclei.}
+\vfill\vfill
+
+}
+
+\clearpage  % Abstract ended, start a new page
+%% ----------------------------------------------------------------
+
+
+\clearpage  % keywords ended, start a new page
+%% ----------------------------------------------------------------
+\setstretch{1.3}  % Reset the line-spacing to 1.3 for body text (if it has changed)
+
+% The Acknowledgements page, for thanking everyone
+\acknowledgements{
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+\vfill\vfill
+Acknowledgements.
+
+}
+\clearpage  % End of the Acknowledgements
+%% ----------------------------------------------------------------
+
+\pagestyle{fancy}  %The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+%% ----------------------------------------------------------------
+\lhead{\emph{Contents}}  % Set the left side page header to "Contents"
+\tableofcontents  % Write out the Table of Contents
+
+%% ----------------------------------------------------------------
+\lhead{\emph{List of Figures}}  % Set the left side page header to "List if Figures"
+\listoffigures  % Write out the List of Figures
+
+%% ----------------------------------------------------------------
+\lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
+\listoftables  % Write out the List of Tables
+
+%% ----------------------------------------------------------------
+\setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
+\clearpage  % Start a new page
+\lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
+\listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
+{
+% \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
+% \textbf{2D} & \textbf{2} \textbf{D}imensional						\\
+% \textbf{3D} & \textbf{Three} \textbf{D}imensional						\\
+
+\textbf{CE} & \textbf{C}oulomb \textbf{E}xcitation 								\\
+\textbf{RE} & \textbf{R}eorientation \textbf{E}ffect								\\
+\textbf{NNDC} & \textbf{N}ational \textbf{N}uclear \textbf{D}ata  \textbf{C}enter						\\
+\textbf{DSSSD} & \textbf{D}ouble \textbf{S}ided \textbf{S}ilicone \textbf{S}trip \textbf{D}etector		\\
+\textbf{HPGe} & \textbf{H}igh-\textbf{P}urity \textbf{Ge}rmanium						\\
+\textbf{DAQ} & \textbf{D}ata \textbf{AQ}uisition system								\\
+
+
+}
+
+
+%% ----------------------------------------------------------------
+%\clearpage  % Start a new page
+%
+%\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
+%\listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
+%{
+% Constant Name & Symbol & = & Constant Value (with units) \\
+%Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
+
+%}
+
+%% ----------------------------------------------------------------
+%\clearpage  %Start a new page
+%\lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
+%\listofnomenclature{lll}  % Include a list of Symbols (a three column table)
+%{
+% symbol & name & unit \\
+%$a$ & distance & m \\
+%$P$ & power & W (Js$^{-1}$) \\
+%& & \\ % Gap to separate the Roman symbols from the Greek
+%$\omega$ & angular frequency & rads$^{-1}$ \\
+%}
+%% ----------------------------------------------------------------
+% End of the pre-able, contents and lists of things
+% Begin the Dedication page
+
+\setstretch{1.3}  % Return the line spacing back to 1.3
+
+\pagestyle{empty}  % Page style needs to be empty for this page
+% \dedicatory{For/Dedicated to/To my\ldots}
+
+\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+
+
+%% ----------------------------------------------------------------
+\mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
+\pagestyle{fancy}  % Return the page headers back to the "fancy" style
+
+% parskip has been nullified somewhere in Thesis.cls so this is needed:
+\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
+
+% Include the chapters of the thesis, as separate files
+% Just uncomment the lines as you write the chapters
+
+ \input{./Chapters/Chapter1} % Introduction
+% % %
+ \input{./Chapters/Chapter2} % Background Theory
+% % %
+ \input{./Chapters/Chapter3} % Experimental Setup
+% %
+ \input{./Chapters/Chapter4} % Experiment 1
+% %
+ \input{./Chapters/Chapter5} % Experiment 2%
+% %
+ \input{./Chapters/Chapter6} % Results and Discussion
+% 
+
+
+
+%% ----------------------------------------------------------------
+% Now begin the Appendices, including them as separate files
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+\input{./Appendices/AppendixA}	% Appendix Title
+
+%\input{./Appendices/AppendixB} % Appendix Title
+
+%\input{./Appendices/AppendixC} % Appendix Title
+
+\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+\backmatter
+
+%% ----------------------------------------------------------------
+\label{Bibliography}
+\lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
+\bibliographystyle{unsrtnat}
+%\bibliographystyle{IEEEtranS}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+\bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
+
+\end{document}  % The End
+%% ----------------------------------------------------------------
