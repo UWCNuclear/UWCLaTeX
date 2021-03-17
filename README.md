@@ -10,7 +10,7 @@ https://www.overleaf.com/read/mtwhqtjyfknh
 
 Many people in many fields use LaTeX and you can find many tips and solutions to issues on Google.
 
-You can make a copy of those LaTeX projects in your Overleaf account to edit them.
+You can make a copy of the LaTeX project in your Overleaf account to edit it.
 Then you can get a link to share your thesis with others by clicking "Share" on the top right corner and turning on link sharing.
 
 Enjoy your thesis and good luck!
