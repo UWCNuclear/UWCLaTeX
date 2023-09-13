@@ -14,8 +14,6 @@ https://www.overleaf.com/read/mtwhqtjyfknh
 
 - Many people in many fields use LaTeX and you can find many tips and solutions on Google.
 
-- Here is an example of formatting for tables and figures and such:
-
-https://www.overleaf.com/read/rypbpdqgkmkh
+- Here is an example of formatting for tables and figures and such:  https://www.overleaf.com/read/rypbpdqgkmkh
 
 - Enjoy your thesis and good luck!
