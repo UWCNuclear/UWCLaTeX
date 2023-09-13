@@ -8,9 +8,14 @@ Here is a LaTeX template for theses at UWC (also check the UWC requirements to m
 
 https://www.overleaf.com/read/mtwhqtjyfknh
 
-Many people in many fields use LaTeX and you can find many tips and solutions to issues on Google.
+- You can make a copy of the LaTeX project in your Overleaf account to edit it.
 
-You can make a copy of the LaTeX project in your Overleaf account to edit it.
-Then you can get a link to share your thesis with others by clicking "Share" on the top right corner and turning on link sharing.
+- Then you can get a link to share your thesis with others by clicking "Share" on the top right corner and turning on link sharing.
 
-Enjoy your thesis and good luck!
+- Many people in many fields use LaTeX and you can find many tips and solutions on Google.
+
+- Here is an example of formatting for tables and figures and such:
+
+https://www.overleaf.com/read/rypbpdqgkmkh
+
+- Enjoy your thesis and good luck!
